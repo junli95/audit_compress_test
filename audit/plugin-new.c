@@ -21,7 +21,7 @@
 #include <assert.h>
 #include <time.h>
 
-#include "mqtt_testlib.h"
+//#include "mqtt_testlib.h"
 
 static volatile int stop = 0;
 static volatile int hup = 0;
@@ -330,7 +330,7 @@ int main(int argc, char **argv)
 			fprintf(stderr, "**msg_len = %u\n **msg_len\n", msg_len);
 			fprintf(stderr, "**message = \n%s\n **message\n",message);
 			//fprintf(stderr, "before:char msg:%s\n",msg_buffer);
-			snprintf(msg_buffer, sizeof(msg_len), );
+			snprintf(msg_buffer, sizeof(msg_len),"u", msg_len);
 			//for(int temp_i=0;temp_i<8;temp_i++)
 			//fprintf(stderr, "char msg:%s\n",msg_buffer);
 			if(-1==write(audit_fd, msg_buffer, sizeof(msg_len))){
