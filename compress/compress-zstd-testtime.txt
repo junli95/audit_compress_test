@@ -1,0 +1,1 @@
+Accumulated compress time: 0.894901514 sec
