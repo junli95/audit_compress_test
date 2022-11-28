@@ -20,5 +20,5 @@ plugin: plugin-new.c
 	$(CC) $(INCLUDES) -Wall -g -O2 -o $@ $^ -L$(LIB) -lauparse -laudit -lmosquitto
 	sudo cp -f $@ /usr/local/sbin
 clean:
-	rm -f *.o gen-log compress-lz4 compress-zstd plugin *.compress
+	rm -f *.o gen-log compress-lz4 compress-zstd plugin *.compress *.decompress
 	

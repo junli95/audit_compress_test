@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 	size_t n = 0;
 	
 	while ((n=read(0, msg_buffer, SIZE_T_MAX+1))) {
+		//fprintf(stderr, "gen_log n:%d\n", n);
 		msg_len = atol(msg_buffer);
 		write(1, msg_buffer, SIZE_T_MAX+1);
            	read(0, message, msg_len);
