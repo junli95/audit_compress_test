@@ -1,4 +1,0 @@
-Accumulated compress time: 0.875286579 sec
-original log size:74632577 B
-compressed log size:20328416 B
-decompressed log size:74632577 B

@@ -1,4 +1,0 @@
-Compress and store audit log file
-
-$ make
-$ ./gen-log < LOG_FILE | ./compress-xx  
