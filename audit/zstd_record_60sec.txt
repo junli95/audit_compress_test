@@ -1,0 +1,6 @@
+original log file storage time:27.840263367 sec
+Accumulated storage time: 0.153798953 sec
+Accumulated compress time: 0.883018374 sec
+original log size:444044840 B
+compressed log size:8298397 B
+decompressed log size:444044840 B

@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	size_t  msg_len=0;
 	char message[MAX_AUDIT_MESSAGE_LENGTH] = { 0 };
 	char msg_buffer[SIZE_T_MAX+1] = { 0 };
-	audit_fd = open("/mnt/audit_compress_test/audit/audit.log",O_CREAT|O_RDWR,0666);
+	audit_fd = open("audit.log",O_CREAT|O_RDWR,0666);
 
 	if(audit_fd==-1)
 	{
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 
 	do{
 		if ((msg_len = read(0, message, MAX_AUDIT_MESSAGE_LENGTH))) {
-			
+			fprintf(stderr, "msg_len:%lu\n",msg_len);	
 			snprintf(msg_buffer, SIZE_T_MAX+1,"%lu", msg_len);
 			if(-1==write(audit_fd, msg_buffer, SIZE_T_MAX+1)){
 				fprintf(stderr, "write error, msg_len:%lu\n", msg_len);		
@@ -85,6 +85,6 @@ int main(int argc, char **argv)
 			//fprintf(stderr, "message\n%s\n",message);
 		}
 	} while (!hup && !stop);
-	
+	close(audit_fd);	
 	return 0;
 }
